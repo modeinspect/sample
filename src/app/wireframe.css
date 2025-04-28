@@ -1,0 +1,172 @@
+/* Wireframe Cartoonish Styles */
+/* Custom font for hand-drawn look */
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap');
+
+/* Global Wireframe Styles */
+.wireframe-mode * {
+  font-family: 'Comic Neue', sans-serif !important;
+  transition: all 0.2s ease;
+}
+
+/* Cartoonish Border Style */
+.wireframe-mode .wireframe-border {
+  border: 2px solid #000 !important;
+  border-radius: 8px !important;
+  box-shadow: 3px 3px 0 #000 !important;
+}
+
+/* Cards */
+.wireframe-mode [data-slot="card"] {
+  background-color: #fff !important;
+  border: 2px solid #000 !important;
+  border-radius: 12px !important;
+  box-shadow: 4px 4px 0 #000 !important;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Buttons */
+.wireframe-mode [data-slot="button"] {
+  background-color: #fff !important;
+  border: 2px solid #000 !important;
+  border-radius: 8px !important;
+  box-shadow: 3px 3px 0 #000 !important;
+  color: #000 !important;
+  font-weight: bold !important;
+  transition: all 0.2s;
+}
+
+.wireframe-mode [data-slot="button"]:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0 #000 !important;
+}
+
+.wireframe-mode [data-slot="button"]:active {
+  transform: translate(1px, 1px);
+  box-shadow: 2px 2px 0 #000 !important;
+}
+
+/* Headings and Text */
+.wireframe-mode h1, .wireframe-mode h2, .wireframe-mode h3, 
+.wireframe-mode [data-slot="card-title"] {
+  color: #000 !important;
+  font-weight: bold !important;
+  text-decoration: none !important;
+}
+
+/* Tables */
+.wireframe-mode table {
+  border: 2px solid #000 !important;
+}
+
+.wireframe-mode th, .wireframe-mode td {
+  border: 1px solid #000 !important;
+}
+
+/* Inputs */
+.wireframe-mode input, .wireframe-mode textarea, .wireframe-mode select {
+  background-color: #fff !important;
+  border: 2px solid #000 !important;
+  border-radius: 8px !important;
+}
+
+/* Charts */
+.wireframe-mode .recharts-wrapper {
+  border: 2px dashed #000 !important;
+  border-radius: 8px !important;
+  padding: 10px !important;
+}
+
+.wireframe-mode .recharts-cartesian-grid line {
+  stroke: #000 !important;
+  stroke-width: 1px !important;
+  stroke-dasharray: 3 3 !important;
+}
+
+.wireframe-mode .recharts-layer.recharts-bar-rectangle path,
+.wireframe-mode .recharts-layer.recharts-area-area path,
+.wireframe-mode .recharts-layer.recharts-line path {
+  stroke: #000 !important;
+  stroke-width: 2px !important;
+}
+
+/* Chart colors */
+.wireframe-mode .recharts-layer.recharts-bar-rectangle[name="revenue"] path {
+  fill: #a9e3ff !important;
+}
+
+.wireframe-mode .recharts-layer.recharts-bar-rectangle[name="expenses"] path {
+  fill: #ffb5b5 !important;
+}
+
+.wireframe-mode .recharts-layer.recharts-area-area path {
+  fill: #d4d4ff !important;
+}
+
+.wireframe-mode .recharts-sector {
+  stroke: #000 !important;
+  stroke-width: 2px !important;
+}
+
+/* Cartoonish Hand-drawn Elements */
+.wireframe-mode .hand-drawn-circle {
+  border-radius: 50%;
+  border: 2px solid #000;
+  background: white;
+}
+
+.wireframe-mode .hand-drawn-line {
+  height: 2px;
+  background-color: #000;
+  margin: 10px 0;
+}
+
+/* Tooltips */
+.wireframe-mode [data-slot="tooltip-content"] {
+  background-color: #fff !important;
+  border: 2px solid #000 !important;
+  border-radius: 8px !important;
+  box-shadow: 3px 3px 0 #000 !important;
+}
+
+/* Scribble Effects for Headers */
+.wireframe-mode h1::after {
+  content: "";
+  display: block;
+  height: 4px;
+  background-image: url("data:image/svg+xml,%3Csvg width='100' height='4' viewBox='0 0 100 4' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,1 C5,0 10,3 15,2 C20,1 25,0 30,1 C35,2 40,3 45,2 C50,1 55,0 60,1 C65,2 70,3 75,2 C80,1 85,0 90,1 C95,2 100,3 105,2' stroke='black' fill='none' stroke-width='1'/%3E%3C/svg%3E");
+  background-repeat: repeat-x;
+  margin-top: 4px;
+}
+
+/* Added Paper Texture Background */
+.wireframe-mode [data-slot="card"] {
+  background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23000000' fill-opacity='0.03'%3E%3Cpath d='M0,0 L10,0 L10,10 L0,10 L0,0 Z M20,0 L30,0 L30,10 L20,10 L20,0 Z M40,0 L50,0 L50,10 L40,10 L40,0 Z M60,0 L70,0 L70,10 L60,10 L60,0 Z M80,0 L90,0 L90,10 L80,10 L80,0 Z'/%3E%3C/g%3E%3C/svg%3E") !important;
+}
+
+/* Arrow Notes */
+.wireframe-mode .note {
+  position: relative;
+  background: #fffed1;
+  padding: 15px;
+  border: 1px solid #000;
+  border-radius: 5px;
+  transform: rotate(-1deg);
+  font-family: 'Comic Neue', cursive;
+  font-style: italic;
+  box-shadow: 2px 2px 0 #000;
+}
+
+/* Scribbled Outlines for Elements */
+.wireframe-mode [data-slot="card"]::before {
+  content: "";
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  right: -3px;
+  bottom: -3px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 14px;
+  pointer-events: none;
+  z-index: -1;
+}
