@@ -1,22 +1,54 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Flight Price History Component
 
-## Getting Started
+This is a prototype of a price history feature for a flight search website. The component displays price trends and recommendations at a glance, with the ability to expand into a full interactive graph view.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- Compact view showing current price, price trend, and quick recommendation
+- Expandable detailed view with price history graph
+- Visual indicators for price changes (up/down)
+- Recommendations based on price analysis
+- Responsive design using Tailwind CSS
+
+## How to Use
+
+Import the component in your Next.js/React application:
+
+```jsx
+import PriceHistoryWidget from './components/PriceHistoryWidget';
+
+// Then use it in your component
+function FlightDetails() {
+  return (
+    <div>
+      <h2>Flight Details</h2>
+      <PriceHistoryWidget />
+    </div>
+  );
+}
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Data Structure
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+The component expects price history data in the following format:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```typescript
+type PriceHistoryData = {
+  currency: string;
+  currentPrice: number;
+  averagePrice: number;
+  lowestPrice: number;
+  highestPrice: number;
+  recommendation: "buy" | "wait" | "neutral";
+  priceChangePercentage: number;
+  history: PriceDataPoint[];
+};
 
+type PriceDataPoint = {
+  date: string; // ISO date string
+  price: number;
+  isLowestPrice?: boolean;
+};
+```
+
+For this prototype, mock data is generated internally. In a real application, you would connect this to your actual price history API.
